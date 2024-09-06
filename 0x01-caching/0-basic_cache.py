@@ -6,6 +6,7 @@ BaseCaching = __import__('base_caching').BaseCaching
 class BasicCache(BaseCaching):
     """Implements BAsic Cache"""
     def __init__(self):
+        """Initializes class instance"""
         super().__init__()
 
     def put(self, key, item):
