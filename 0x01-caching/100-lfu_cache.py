@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-"""Caching"""
-from collections import Counter
+"""A Caching System"""
 BaseCaching = __import__('base_caching').BaseCaching
 
 
