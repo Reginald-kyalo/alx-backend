@@ -25,12 +25,12 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-        try:
-            assert page > 0 and type(page) == int
-            assert page_size > 0 and type(page_size) == int
-        except (AssertionError, TypeError):
-            return []
+        """Implements get page"""
+        assert page > 0 and type(page) == int
+        assert page_size > 0 and type(page_size) == int
         self.__dataset = self.dataset()
         start, end = index_range(page, page_size)
+        if start > len(data):
+           return []
         dataset_list: List[List] = self.__dataset[start:end]
         return dataset_list

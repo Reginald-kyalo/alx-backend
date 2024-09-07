@@ -25,17 +25,16 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-        try:
-            assert (page > 0 or type(page) != int)
-            assert (page_size > 0 or type(page_size) != int)
-        except (AssertionError, TypeError):
-            return []
+        """Implements get page"""
+        assert (page > 0 or type(page) != int)
+        assert (page_size > 0 or type(page_size) != int)
         self.__dataset = self.dataset()
         start, end = index_range(page, page_size)
         dataset_list: List[List] = self.__dataset[start:end]
         return dataset_list
 
     def get_hyper(self, page: int = 1, page_size: int = 10):
+        """Implements get_hyper"""
         start, end = index_range(page, page_size)
         data = self.get_page(page, page_size)
         total_pages = math.ceil((len(self.__dataset)) / page_size)
