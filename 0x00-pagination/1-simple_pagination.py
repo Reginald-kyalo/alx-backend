@@ -26,8 +26,8 @@ class Server:
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         try:
-            assert page > 0 or type(page) == int
-            assert page_size > 0 or type(page_size) == int
+            assert page > 0 and type(page) == int
+            assert page_size > 0 and type(page_size) == int
         except (AssertionError, TypeError):
             return []
         self.__dataset = self.dataset()
