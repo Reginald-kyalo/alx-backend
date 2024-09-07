@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Pagination"""
 import csv
 import math
 from typing import List, Tuple
@@ -31,5 +32,5 @@ class Server:
         data = self.dataset()
         start, end = index_range(page, page_size)
         if start > len(data):
-           return []
+            return []
         return data[start:end]
