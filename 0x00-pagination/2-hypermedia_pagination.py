@@ -26,8 +26,8 @@ class Server:
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """Implements get page"""
-        assert (page > 0 or type(page) != int)
-        assert (page_size > 0 or type(page_size) != int)
+        assert type(page) == int and type(page_size) == int
+        assert page > 0 and page_size > 0
         self.__dataset = self.dataset()
         start, end = index_range(page, page_size)
         dataset_list: List[List] = self.__dataset[start:end]
